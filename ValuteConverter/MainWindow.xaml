@@ -1,0 +1,64 @@
+﻿<Window x:Class="ValuteConverter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ValuteConverter"
+        mc:Ignorable="d"
+        Title="Конвертер валют"  MinHeight="720" MinWidth="1280" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Margin="50">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.4*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1.4*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="У меня есть:" />
+        <ComboBox DisplayMemberPath="Name" Name="SellValuteCmb" Grid.Row="2" />
+
+        <TextBlock Grid.Column="2" Text="Хочу приобрести:" />
+        <ComboBox DisplayMemberPath="Name" Name="BuyValuteCbm" Grid.Column="2" Grid.Row="2" />
+
+
+        <Border Padding="20" Grid.Row="4" BorderThickness="3"  BorderBrush="Black"  >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="0.5*"/>
+                </Grid.RowDefinitions>
+
+                <TextBox Name="SellAmountTb" Text="1000"/>
+                <TextBlock Name="SellRatioTbl" Grid.Row="3" Text="1 RUB = 0.0123 USD"/>
+            </Grid>
+        </Border>
+
+        <Border Padding="20" Grid.Row="4" BorderThickness="3" Grid.Column="2" BorderBrush="Black" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="0.5*"/>
+                </Grid.RowDefinitions>
+
+                <TextBox Name="BuyAmountTb" Text="12.32"/>
+                <TextBlock Name="BuyRatioTbl" Grid.Row="3" Text="1 USD = 81.13 RUB"/>
+            </Grid>
+        </Border>
+
+        <TextBlock Name="UpdateDateTbl" Grid.Row="6" Grid.Column="3" TextAlignment="Center"  Text="Данные за 2025-04-21" />
+
+        <Button Height="200" BorderThickness="0" Grid.Column="1" Grid.Row="4" Background="Transparent" >
+            <Image Source="/Resources/Icons/exchange.png" />
+        </Button>
+    </Grid>
+</Window>
