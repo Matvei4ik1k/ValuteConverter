@@ -14,7 +14,16 @@ namespace ValuteConverter
             InitializeComponent();
             _courseService = new CourseService(SellValuteCmb, BuyValuteCbm, SellAmountTb, BuyAmountTb, SellRatioTbl, BuyRatioTbl, UpdateDateTbl);
 
-            _courseService.LoadCource();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            await _courseService.LoadCource();
         }
     }
 }

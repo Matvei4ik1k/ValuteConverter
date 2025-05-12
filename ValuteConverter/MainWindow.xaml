@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ValuteConverter"
         mc:Ignorable="d"
-        Title="Конвертер валют"  MinHeight="720" MinWidth="1280" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Конвертер валют"  MinHeight="720" MinWidth="1280" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded">
     <Grid Margin="50">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -28,7 +28,7 @@
         <ComboBox DisplayMemberPath="Name" Name="SellValuteCmb" Grid.Row="2" />
 
         <TextBlock Grid.Column="2" Text="Хочу приобрести:" />
-        <ComboBox DisplayMemberPath="Name" Name="BuyValuteCbm" Grid.Column="2" Grid.Row="2" />
+        <ComboBox  DisplayMemberPath="Name" Name="BuyValuteCbm" Grid.Column="2" Grid.Row="2" />
 
 
         <Border Padding="20" Grid.Row="4" BorderThickness="3"  BorderBrush="Black"  >
@@ -57,7 +57,7 @@
 
         <TextBlock Name="UpdateDateTbl" Grid.Row="6" Grid.Column="3" TextAlignment="Center"  Text="Данные за 2025-04-21" />
 
-        <Button Height="200" BorderThickness="0" Grid.Column="1" Grid.Row="4" Background="Transparent" >
+        <Button Height="200" BorderThickness="0" Grid.Column="1" Grid.Row="4" Background="Transparent" Click="Button_Click" >
             <Image Source="/Resources/Icons/exchange.png" />
         </Button>
     </Grid>
