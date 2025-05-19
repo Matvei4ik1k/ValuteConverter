@@ -38,7 +38,7 @@
                     <RowDefinition Height="0.5*"/>
                 </Grid.RowDefinitions>
 
-                <TextBox Name="SellAmountTb" Text="1000"/>
+                <TextBox Name="SellAmountTb" Text="1000" TextChanged="SellAmountTb_TextChanged"/>
                 <TextBlock Name="SellRatioTbl" Grid.Row="3" Text="1 RUB = 0.0123 USD"/>
             </Grid>
         </Border>
@@ -58,7 +58,9 @@
         <TextBlock Name="UpdateDateTbl" Grid.Row="6" Grid.Column="3" TextAlignment="Center"  Text="Данные за 2025-04-21" />
 
         <Button Height="200" BorderThickness="0" Grid.Column="1" Grid.Row="4" Background="Transparent" Click="Button_Click" >
-            <Image Source="/Resources/Icons/exchange.png" />
+            <Button.Content>
+                <Image Source="/Resources/Icons/exchange.png" />
+            </Button.Content>
         </Button>
     </Grid>
 </Window>

@@ -91,12 +91,24 @@ namespace ValuteConverter.AppData
             }
         }
 
-        public void Convert()
+        public void ConvertValute()
         {
-            if (_sellValuteComboBox.SelectedItem != null && _buyValuteComboBox.SelectedItem != null)
-            {
+            SellValute = _sellValuteComboBox.SelectedItem as Valute;
+            BuyValute = _buyValuteComboBox.SelectedItem as Valute;
+            SellAmount = Convert.ToDouble(_sellValuteTextBox.Text);
+            BuyAmount = SellAmount * BuyValute.Nominal / SellValute.Nominal * SellValute.Value / BuyValute.Value;
+            _buyValuteTextBox.Text = $"{BuyAmount:F2}";
 
-            }
+
+        }
+
+        public void CalculateRatio()
+        {
+            SellRatio = BuyAmount / SellAmount;
+            BuyRatio = SellAmount / BuyAmount;
+
+            _sellRatioTextBlock.Text = $"{SellValute.Nominal} {SellValute.CharCode} ={BuyRatio:F4} {BuyValute.CharCode}";
+            _buyRatioTextBlock.Text = $"{BuyValute.Nominal} {BuyValute.CharCode} = {SellRatio:F4} {SellValute.CharCode}";
         }
     }
 }

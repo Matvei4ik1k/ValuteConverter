@@ -8,11 +8,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Icons\exchange.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Resources\Fonts\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Icons\exchange.png" />
   </ItemGroup>
 
 </Project>

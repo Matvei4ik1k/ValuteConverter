@@ -25,5 +25,13 @@ namespace ValuteConverter
         {
             await _courseService.LoadCource();
         }
+
+        private void SellAmountTb_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            if (_courseService != null)
+            {
+                _courseService.ConvertValute();
+            }
+        }
     }
 }
