@@ -25,10 +25,10 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock Text="У меня есть:" />
-        <ComboBox DisplayMemberPath="Name" Name="SellValuteCmb" Grid.Row="2" />
+        <ComboBox SelectionChanged="SellValuteCmb_SelectionChanged" DisplayMemberPath="Name"  Name="SellValuteCmb" Grid.Row="2" />
 
         <TextBlock Grid.Column="2" Text="Хочу приобрести:" />
-        <ComboBox  DisplayMemberPath="Name" Name="BuyValuteCbm" Grid.Column="2" Grid.Row="2" />
+        <ComboBox SelectionChanged="BuyValuteCmb_SelectionChanged" DisplayMemberPath="Name" Name="BuyValuteCmb" Grid.Column="2" Grid.Row="2" />
 
 
         <Border Padding="20" Grid.Row="4" BorderThickness="3"  BorderBrush="Black"  >
@@ -50,7 +50,7 @@
                     <RowDefinition Height="0.5*"/>
                 </Grid.RowDefinitions>
 
-                <TextBox Name="BuyAmountTb" Text="12.32"/>
+                <TextBox TextChanged="BuyAmountTb_TextChanged" Name="BuyAmountTb" Text="12.32"/>
                 <TextBlock Name="BuyRatioTbl" Grid.Row="3" Text="1 USD = 81.13 RUB"/>
             </Grid>
         </Border>

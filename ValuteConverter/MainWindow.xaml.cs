@@ -15,12 +15,6 @@ namespace ValuteConverter
             _courseService = new CourseService(SellValuteCmb, BuyValuteCbm, SellAmountTb, BuyAmountTb, SellRatioTbl, BuyRatioTbl, UpdateDateTbl);
 
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
             await _courseService.LoadCource();
@@ -32,6 +26,25 @@ namespace ValuteConverter
             {
                 _courseService.ConvertValute();
             }
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void SellValuteCmb_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            if (_courseService != null) { _courseService.ConvertValute(); }
+        }
+
+        private void BuyValuteCmb_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            if (_courseService != null) { _courseService.ConvertValute(); }
+        }
+
+
+        private void BuyAmountTb_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            if (_courseService != null) { _courseService.ConvertValute(); }
         }
     }
 }
